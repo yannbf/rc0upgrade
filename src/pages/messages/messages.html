@@ -1,0 +1,31 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Woody</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="messages">
+  <ion-list> 
+    <ion-item *ngFor="let message of messages">
+      <ion-avatar [ngClass]="message.isSent ? 'right' : 'left'">
+        <img *ngIf="message.user" [src]="message.user.profilePicture">
+      </ion-avatar>
+      <div class="message" [ngClass]="message.isSent ? 'sent' : 'received'">
+        <h3>{{message.message}}</h3>
+        <p *ngIf="message.user">{{message.user.name}} {{message.timestamp | date:"hh:mm a" | lowercase}}</p> 
+      </div>
+    </ion-item> 
+  </ion-list>
+</ion-content>
+
+<ion-footer> 
+  <form [formGroup]="messageForm" (submit)="send(chatBox)" novalidate> 
+    <ion-item>
+      <ion-input formControlName="message" [(ngModel)]="chatBox" placeholder="Your message..."></ion-input>
+      <button ion-button clear (click)="send(chatBox)" item-right><ion-icon name="arrow-dropright-circle"></ion-icon></button> 
+    </ion-item>
+  </form>
+</ion-footer>

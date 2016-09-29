@@ -1,0 +1,32 @@
+<ion-content class="welcome"> 
+  <ion-slides pager [options]="slideOptions">  
+    <ion-slide class="slide-background" *ngFor="let slide of slides" [ngStyle]="{'background-image': 'url(' + slide.image +')'}">
+      <ion-buttons end>
+        <button ion-button clear class="skip-button" (click)="goToHome()">Skip</button>
+      </ion-buttons> 
+      <div class="text-wrapper">
+        <div class="slide-text"> 
+          <h2 [ngClass]="colorClass" class="slide-title" [innerHTML]="slide.title"></h2><br>
+          <p class="white" [innerHTML]="slide.description"></p>
+        </div>
+      </div>
+    </ion-slide>
+    <!--<ion-slide>  
+      <img src="img/ica-slidebox-img-4.png" class="slide-image"/>
+      <h2 class="slide-title">Ready to Play?</h2>
+      <!--<button ion-button large clear (click)="goToApp()">
+        Continue
+        <ion-icon name="arrow-forward"></ion-icon>
+      </button>
+    </ion-slide>-->
+  </ion-slides>
+  <div class="floating-buttons">
+    <button ion-button clear (click)="goToSignUp()">Sign up</button>
+    <button ion-button clear (click)="goToLogin()">Log In</button>
+  </div>
+</ion-content>
+
+
+<ion-item> 
+  <h2 [ngClass]="colorClass">Lorem</h2><br>
+</ion-item>

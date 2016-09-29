@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>
+      Login
+    </ion-title>
+  </ion-navbar>
+</ion-header> 
+<ion-content padding class="login" [ngStyle]="{'background-image': 'url(' + backgroundImage +')'}">
+  <img src="img/logo.png" class="logo">
+ 
+  <form [formGroup]="loginForm" (submit)="loginUser()" novalidate>
+ 
+    <ion-item>
+      <ion-label stacked>Email</ion-label>
+      <ion-input clearInput formControlName="email" type="email" 
+        placeholder="Your email address"></ion-input>
+    </ion-item>
+ 
+    <ion-item>
+      <ion-label stacked>Password</ion-label>
+      <ion-input clear formControlName="password" type="password" 
+        placeholder="Your password"></ion-input>
+    </ion-item>
+ 
+    <button ion-button block type="submit">
+      Login
+    </button>
+ 
+  </form>
+ 
+  <button ion-button block clear (click)="goToSignup()">
+    Create a new account
+  </button>
+
+  <button ion-button block clear (click)="goToResetPassword()">
+    I forgot my password
+  </button>
+</ion-content>

@@ -1,0 +1,60 @@
+<ion-header *ngIf="showSearchBar">
+  <ion-navbar> 
+    <ion-searchbar
+    [(ngModel)]="myInput"
+      >
+    </ion-searchbar>
+  </ion-navbar>
+</ion-header>
+
+<ion-content elastic-header class="home">
+  <button ion-button fab primary fab-top fab-left (click)="scrollDown()">
+    <ion-icon name="search"></ion-icon>
+  </button>
+  <div class="home-title">Hi, Yann!</div> 
+  <div class="home-subtitle">Rent unique vehicles from all over the world.</div> 
+  <ion-slides id="elastic-header" [options]="slideOptions"> 
+    <ion-slide class="slide-background" *ngFor="let slide of slides" [ngStyle]="{'background-image': 'url(' + slide.image +')'}">
+      <ion-row class="featured">
+        <ion-col width-66>
+          <ion-row>
+            <p class="left-23">{{slide.title}}</p>
+          </ion-row>
+          <ion-row>
+            <ion-icon name="pin"></ion-icon>
+            <span class="left-10">{{slide.location}}</span>
+          </ion-row>
+        </ion-col>
+        <ion-col width-33>
+          <ion-row>
+            <ion-col width-50>
+                <p>
+                  R$<b class="price">{{slide.price}}</b>
+                </p>
+            </ion-col>
+            <ion-col width-50 class="small">
+              <p>
+                BRL
+              </p>
+              <p>
+                PER DAY.
+              </p>
+            </ion-col>
+          </ion-row> 
+        </ion-col>
+      </ion-row> 
+    </ion-slide>  
+  </ion-slides>
+  <ion-item>
+    <ion-card *ngFor="let category of categories">
+      <img [src]="category.imageURL"/>
+      <div class="card-title">{{category.title}}</div>
+      <div class="card-subtitle">{{category.quantity}} Vehicles</div>
+    </ion-card>
+  </ion-item>
+ 
+  <ion-card *ngFor="let client of _clientRecordsArray">
+      <div >{{client.contactName}}</div>
+  </ion-card>
+  
+</ion-content>

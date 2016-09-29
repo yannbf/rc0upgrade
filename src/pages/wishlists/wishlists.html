@@ -1,0 +1,18 @@
+<ion-content class="about">
+  <ion-list [virtualScroll]="items">
+
+    <ion-item *virtualItem="let item" class="text-center" 
+        (click)="viewDetail(item)"
+        [ngStyle]="{'background-image': 'url(' + item.imageUrl +')'}">
+      <ion-icon *ngIf="item.private" name="lock" class="lock mb-15"></ion-icon>
+      <p class="title mb-15">
+        {{ item.title }}
+      </p>
+      <p class="journey mb-15">
+        {{ item.journeys }} journeys
+      </p> 
+      <hr class="divider bottom">
+    </ion-item>
+  
+  </ion-list> 
+</ion-content>

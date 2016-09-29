@@ -1,0 +1,92 @@
+.welcome {
+
+  // font-family: 'Kozuka Gothic Pro';
+  
+  .skip-button {
+    color: white;
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-color: transparent;
+    font-weight: bold;
+  }
+
+  .floating-buttons {
+    z-index: 1;
+    background-color: $base-color-transparent;
+    width: 100%;
+    bottom: 0;
+    position: absolute;
+    margin-bottom: 50px;
+  }
+
+  .floating-buttons button {
+    color: white;
+    min-height: 7vh;
+    text-transform: none;
+    font-size: 1.4em;
+    font-weight: bold;
+    float: left;
+    width: 48%;
+    background: transparent;
+  }
+
+  .slide-background {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-color: transparent;
+  }
+  
+  .toolbar-background {
+    border-color: transparent;
+  }
+
+  .slide-zoom {
+    height: 100%;
+  }
+
+  .text-wrapper {
+    width: 100vw;
+    height: 100vh;
+  }
+
+  .slide-text { 
+    position: relative;
+    text-align: center;
+    top: 50%;
+    transform: translateY(-50%);
+    // align-items: center;
+    // justify-content: center;
+  }
+
+  .slide-title {
+    color: white;
+    font-weight: bold;
+  }
+
+  .slide-image {
+    max-height: 100%;
+    max-width: 100%;
+    margin: 18px 0;
+  } 
+
+  .last-slide { 
+    background-image: url('img/welcome-4.jpg');
+  }
+
+  b {
+    font-weight: 500;
+  }
+
+  p {
+    padding: 0 40px;
+    font-size: 1.1em;
+    line-height: 1.5;
+    color: #FFF;
+
+    b {
+      color: #000000;
+    }
+  }
+}

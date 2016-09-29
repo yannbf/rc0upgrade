@@ -1,0 +1,9 @@
+<ion-content class="explore">
+ 
+  <ion-card *ngFor="let category of categories">
+    <img [src]="category.imageURL"/>
+    <div class="card-title">{{category.title}}</div>
+    <div class="card-subtitle">{{category.quantity}} Vehicles</div>
+  </ion-card>
+
+</ion-content>
